@@ -5,6 +5,8 @@ import os
 app = Flask(__name__)
 CORS(app)
 
+print("app.py was imported")
+
 @app.route("/")
 def index():
     print("Root was hit")
