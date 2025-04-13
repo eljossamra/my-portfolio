@@ -10,6 +10,10 @@ def index():
     print("Root was hit")
     return "Flask app is running!"
 
+app.route("/routes")
+def list_routes():
+    return jsonify([str(rule) for rule in app.url_map.iter_rules()])
+
 @app.route("/api/hello", methods=["GET"])
 def hello():
     print("/api/hello was hit")
