@@ -2,26 +2,22 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 import os
 
+print("app.py was imported")
+
 app = Flask(__name__)
 CORS(app)
-
-print("app.py was imported")
 
 @app.route("/")
 def index():
     print("Root was hit")
     return "Flask app is running!"
 
-app.route("/routes")
-def list_routes():
-    return jsonify([str(rule) for rule in app.url_map.iter_rules()])
-
 @app.route("/api/hello", methods=["GET"])
 def hello():
     print("/api/hello was hit")
     return jsonify({"message": "Hello Amanda!"})
 
-if __name__ == "__main__":
-    print("Starting Flask app...")
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=False, host="0.0.0.0", port=port)
+@app.route("/routes")
+def list_routes():
+    print("/routes was hit")
+    return jsonify([str(rule) for rule in app.url_map.iter_rules()])
