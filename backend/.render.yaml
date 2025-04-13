@@ -1,7 +1,7 @@
 services:
   - type: web
     name: flask-backend
-    env: python
+    env: python3
     buildCommand: ""
     startCommand: gunicorn app:app
     rootDir: backend
