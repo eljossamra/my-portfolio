@@ -5,13 +5,15 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/api/hello", methods=["GET"])
-def hello():
-    return jsonify({"message": "Hello Amanda!"})
-
 @app.route("/")
 def index():
+    print("Root was hit")
     return "Flask app is running!"
+
+@app.route("/api/hello", methods=["GET"])
+def hello():
+    print("/api/hello was hit")
+    return jsonify({"message": "Hello Amanda!"})
 
 if __name__ == "__main__":
     print("Starting Flask app...")
