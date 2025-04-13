@@ -9,6 +9,10 @@ CORS(app)
 def hello():
     return jsonify({"message": "Hello Amanda!"})
 
+@app.route("/")
+def index():
+    return "Flask app is running!"
+
 if __name__ == "__main__":
     print("Starting Flask app...")
     port = int(os.environ.get("PORT", 5000))
