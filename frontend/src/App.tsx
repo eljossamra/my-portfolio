@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 
 function App() {
     return (
-        <div className="font-sans text-gray-800 bg-white">
+        <div className="font-sans text-gray-800">
             <Header />
             <main className="page-container space-y-24">
                 <Hero />
