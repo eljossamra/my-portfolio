@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
+import Header from './components/Header'
+import Hero from './components/Hero'
+import About from './components/About'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("https://flask-backend-o1t6.onrender.com/api/hello")
-        .then((res) => res.json())
-        .then((data) => setMessage(data.message))
-        .catch((err) => console.error("API call failed:", err));
-  }, []);
-
-  return (
-      <div>
-        <h1>Portfolio Site</h1>
-        <p>Message from backend: {message}</p>
-      </div>
-  );
+    return (
+        <div className="font-sans text-gray-800 bg-white">
+            <Header />
+            <main className="space-y-24 px-6 sm:px-10 lg:px-24">
+                <Hero />
+                <About />
+                <Projects />
+            </main>
+            <Footer />
+        </div>
+    )
 }
 
-export default App;
+export default App
